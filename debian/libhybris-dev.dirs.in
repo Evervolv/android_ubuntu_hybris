@@ -1,0 +1,4 @@
+#PKGINCLUDEDIR#/surface_flinger
+#PKGINCLUDEDIR#/input
+#PKGINCLUDEDIR#/camera
+#PKGINCLUDEDIR#/media

@@ -1,0 +1,426 @@
+libhybris (0.60-0phablet1) quantal; urgency=low
+
+  * Updating licenses and packaging to better fit Ubuntu's standards
+    (LP: #1097083)
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Sun, 17 Feb 2013 23:58:15 -0300
+
+libhybris (0.59) quantal; urgency=low
+
+  * Removing extra debug from linker in case the library is not prelinked
+    (disabled at recent Android versions)
+  * Making libhybris buildable x86 64 (useful to avoid dependencies issues
+    for packages depending but not using hybris at run time)
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Sun, 10 Feb 2013 23:36:26 -0200
+
+libhybris (0.58) quantal; urgency=low
+
+  * Removing code from ubuntu platform api, as it's now available at a
+    different package (ubuntu-platform-api).
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 05 Feb 2013 04:53:46 -0200
+
+libhybris (0.57) quantal; urgency=low
+
+  * Place OSK input grab window according to coordinates and not only size
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Mon, 04 Feb 2013 13:33:25 -0430
+
+libhybris (0.56) quantal; urgency=low
+
+  * Correctly set window flags for input propagation
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Fri, 01 Feb 2013 03:39:45 -0430
+
+libhybris (0.55) quantal; urgency=low
+
+  [ Thomas Voss ]
+  * Get rid of hard-coded sizes for input trap window.
+
+  [ Ricardo Mendoza ]
+  * Dynamically resize the OSK input window according to reported size 
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Thu, 31 Jan 2013 18:48:27 -0430
+
+libhybris (0.54) quantal; urgency=low
+
+  * Added mediaPrepared callback which signifies when libstagefright is ready
+    to play the loaded media.
+
+ -- Jim Hodapp <jim.hodapp@canonical.com>  Tue, 29 Jan 2013 15:46:08 -0500
+
+libhybris (0.53) quantal; urgency=low
+
+  [ Daniel d'Andrada ]
+  * Added API to expose android's GPS through hybris
+
+  [ Ricardo Salveti de Araujo ]
+  * hybris/common: removing debugging prints by default
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 29 Jan 2013 08:59:18 -0500
+
+libhybris (0.52) quantal; urgency=low
+
+  * Added a function to initialize an ubuntu_sensor_observer instance for use by a client app.
+
+ -- Jim Hodapp <jim.hodapp@canonical.com>  Thu, 24 Jan 2013 14:42:26 -0500
+
+libhybris (0.51) quantal; urgency=low
+
+  * Added blank / unblank methods to control power to display.
+
+ -- Michael Frey <michael.frey@canonical.com>  Thu, 24 Jan 2013 09:36:45 -0500
+
+libhybris (0.50) quantal; urgency=low
+
+  * Added public API functions to enable/disable specific sensors.
+
+ -- Jim Hodapp <jim.hodapp@canonical.com>  Wed, 23 Jan 2013 12:55:23 -0500
+
+libhybris (0.49) quantal; urgency=low
+
+  * Adding more stdio.h hooks to avoid calling __sfvwrite (malloc -> pthread)
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Wed, 23 Jan 2013 00:39:41 -0200
+
+libhybris (0.48) quantal; urgency=low
+
+  [ Daniel d'Andrada ]
+  * Added hook for fseeko function.
+
+  [ Ricardo Salveti de Araujo ]
+  * Rebase compat code to work with Android's JB 4.2.1
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 22 Jan 2013 16:31:06 -0200
+
+libhybris (0.47) quantal; urgency=low
+
+  * Fix predicate when updating input configuration if osk/notifications visibility changes.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Thu, 20 Dec 2012 17:15:24 +0100
+
+libhybris (0.46) quantal; urgency=low
+
+  * Add telephony to list of well known apps 
+
+ -- Bill Filler <bill.filler@canonical.com>  Wed, 19 Dec 2012 19:21:58 -0500
+
+libhybris (0.45) quantal; urgency=low
+
+  * Fix input events being propagated through the osk to ordinary apps underneath.
+ -- Thomas Voß <thomas.voss@canonical.com>  Tue, 18 Dec 2012 07:29:51 +0100
+
+libhybris (0.44) quantal; urgency=low
+
+  * Fix key event delivery and remove filtering of volume up key.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Mon, 17 Dec 2012 15:31:36 +0100
+
+libhybris (0.43) quantal; urgency=low
+
+  * Bumped package version.
+
+ -- Loïc Molinari <loic.molinari@canonical.com>  Mon, 17 Dec 2012 23:30:41 +0100
+
+libhybris (0.42) quantal; urgency=low
+
+  * Add a callback for session observers that signals when a session is unfocused.
+  * Introduce surface flags and a way to express that a surface should be opaque.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Fri, 14 Dec 2012 12:31:36 +0100
+
+libhybris (0.41) quantal; urgency=low
+
+  * Stop and continue ordinary app sessions.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Fri, 14 Dec 2012 12:00:42 +0100
+
+libhybris (0.40) quantal; urgency=low
+
+  [ Thomas Voß ]
+  * Do not focus system sessions.
+
+ -- Michael Frey <michael.frey@canonical.com>  Thu, 13 Dec 2012 17:05:42 -0500
+
+libhybris (0.39) quantal; urgency=low
+
+  * Add a way to unfocus all running applications.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Wed, 12 Dec 2012 14:49:36 +0100
+
+libhybris (0.38) quantal; urgency=low
+
+  * Fix event delivery for system-session only scenarios.
+  * Add a new callback "on_session_requested" for signalling to observers: Please start a session with the following properties.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Tue, 11 Dec 2012 19:31:51 +0100
+
+libhybris (0.37) quantal; urgency=low
+
+  * Iterate surface roles and adjust stacking.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Thu, 06 Dec 2012 21:00:04 +0100
+
+libhybris (0.36) quantal; urgency=low
+
+  * Refactor sensors API to include proximity and ambient light readings.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Wed, 05 Dec 2012 18:36:36 +0100
+
+libhybris (0.35) quantal; urgency=low
+
+  * Bumping the package version.
+
+ -- Jim Hodapp <jim.hodapp@canonical.com>  Wed, 05 Dec 2012 11:54:39 -0500
+
+libhybris (0.34) quantal; urgency=low
+
+  * Do not restack surfaces on request update
+  * Add query of screen dpi.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Tue, 04 Dec 2012 20:53:26 +0100
+
+libhybris (0.33) quantal; urgency=low
+
+  [ Thomas Voß ]
+  * Add a generic way for application sessions signalling
+    an update to the appmanager.
+
+ -- Michael Frey <michael.frey@canonical.com>  Fri, 30 Nov 2012 16:19:29 -0500
+
+libhybris (0.32) quantal; urgency=low
+
+  * Call a callback when the end of media is reached.
+
+ -- Jim Hodapp <jim.hodapp@canonical.com>  Fri, 30 Nov 2012 15:26:46 -0500
+
+libhybris (0.31) quantal; urgency=low
+
+  * Add support for rotation vector and linear acceleration sensors.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Fri, 30 Nov 2012 11:50:40 +0100
+
+libhybris (0.30) quantal; urgency=low
+
+  * Fix event delivery in case of multiple surfaces.
+  * Add a test application that captures the issue.
+  * Fix query of vertical screen resolution.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Thu, 29 Nov 2012 15:47:53 +0100
+
+libhybris (0.29) quantal; urgency=low
+
+  [ Thomas Voß ]
+  * Add policies for handling surface roles and session-type.
+
+ -- Michael Frey <michael.frey@canonical.com>  Wed, 28 Nov 2012 14:40:43 -0500
+
+libhybris (0.28) quantal; urgency=low
+
+  [ Jim Hodapp ]
+  * Hardware accelerated media playback interface
+  * Video/audio support over the bridge
+  * Volume get/set support
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Tue, 27 Nov 2012 15:38:15 -0430
+
+libhybris (0.27) unstable; urgency=low
+
+  [ Thomas Voß ]
+  * Add infrastructure for menubar-states in api
+    & means for client to register for lifecycle-events.
+  * Add implementation for acquiring snapshots of running applications.
+
+  [ Ricardo Salveti ]
+  * Fix android logging to now use /dev/alog.
+
+ -- Michael Frey <michael.frey@canonical.com>  Tue, 27 Nov 2012 10:18:05 -0500
+
+libhybris (0.26) unstable; urgency=low
+
+  * Expose accelerometer over hybris to Ubuntu.
+
+ -- Michael Frey <michael.frey@canonical.com>  Fri, 23 Nov 2012 14:11:47 -0500
+
+libhybris (0.25) unstable; urgency=low
+
+  [ Ricardo Salveti de Araujo ]
+  * Covering static initializers and rwlock functions
+
+  [ Thomas Voß ]
+  * ubuntu_application_api: Add means for querying running sessions
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Mon, 19 Nov 2012 16:40:26 -0200
+
+libhybris (0.24) unstable; urgency=low
+
+  [ Ricardo Salveti de Araujo ]
+  * Removing commented functions that were never used by us
+
+ -- Michael Frey <michael.frey@canonical.com>  Fri, 16 Nov 2012 09:46:34 -0500
+
+libhybris (0.23) unstable; urgency=low
+
+  * Cover all pthread_attr related functions
+  * Warn about shared mutex or shared condition with Android
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Thu, 15 Nov 2012 12:35:06 -0200
+
+libhybris (0.22) unstable; urgency=low
+
+  * Added more hooks for *printf functions.
+
+ -- Michael Frey <michael.frey@canonical.com>  Tue, 13 Nov 2012 11:20:15 -0500
+
+libhybris (0.21) unstable; urgency=low
+
+  * Fixes from upstream, specifically for errno handling, to avoid random
+    crashes when Android calls need to use and set errno (egl libs case when
+    using Nux and Unity)
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Mon, 12 Nov 2012 10:10:26 -0200
+
+libhybris (0.20) unstable; urgency=low
+
+  * Support for photo rotation.
+
+ -- Michael Frey <michael.frey@canonical.com>  Wed, 07 Nov 2012 16:21:16 -0500
+
+libhybris (0.19) unstable; urgency=low
+
+  * Fix logic for detecting NVIDIA hack.  We were always using it.
+
+ -- Michael Frey <michael.frey@canonical.com>  Tue, 06 Nov 2012 10:32:06 -0500
+
+libhybris (0.18) unstable; urgency=low
+
+  * Support for ARM hard float.
+  * Initial sensor api support.
+
+ -- Michael Frey <michael.frey@canonical.com>  Tue, 30 Oct 2012 12:46:14 +0100
+
+libhybris (0.17) unstable; urgency=low
+
+  [ Ricardo Salveti de Araujo ]
+  * Renaming Android binaries to follow the binary pattern at the fs:
+    - default_ubuntu_application_manager to ubuntuappmanager
+    - default_ubuntu_application_manager_test to ubuntuappmanager_test
+
+  [ Sergio Schvezov ]
+  * Releasing
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Thu, 25 Oct 2012 17:38:53 +0200
+
+libhybris (0.16) unstable; urgency=low
+
+  * Remove debug printouts in application manager.
+
+ -- Michael Frey <michael.frey@canonical.com>  Thu, 25 Oct 2012 13:06:28 +0200
+
+libhybris (0.15) unstable; urgency=low
+
+  * Adding libubuntu_application_api and test_ubuntu_app_api for application
+    and window manager.
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 23 Oct 2012 09:20:17 +0200
+
+libhybris (0.14) unstable; urgency=low
+
+  * Check for env var GRAPHICS at runtime.  This allows dynamic use of
+    the nvidia graphics hack.
+
+ -- Michael Frey <michael.frey@canonical.com>  Thu, 18 Oct 2012 12:42:57 -0400
+
+libhybris (0.13) unstable; urgency=low
+
+  * Added camera headers
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Tue, 16 Oct 2012 11:47:07 -0300
+
+libhybris (0.12) unstable; urgency=low
+
+  * Added sf_surface_set_size.  Ability to set a surface size.
+
+ -- Michael Frey <michael.frey@canonical.com>  Wed, 10 Oct 2012 10:30:01 -0400
+
+libhybris (0.11) unstable; urgency=low
+
+  * Removed previous mappings.  Causes segfaults.
+
+ -- Michael Frey <michael.frey@canonical.com>  Mon, 08 Oct 2012 21:04:10 -0400
+
+libhybris (0.10) unstable; urgency=low
+
+  * Added more mapping in common/hooks.c to fix segfaults.
+
+ -- Michael Frey <michael.frey@canonical.com>  Fri, 05 Oct 2012 10:49:31 -0400
+
+libhybris (0.9) unstable; urgency=low
+
+  * Added support to create a surfaceflinger client without EGL setup.
+  * Fixed up some Makefile clean target.
+
+ -- Michael Frey <michael.frey@canonical.com>  Thu, 27 Sep 2012 09:58:19 -0400
+
+libhybris (0.8) unstable; urgency=low
+
+  * common/hooks.c stubbed out more functions needed.
+
+ -- Michael Frey <michael.frey@canonical.com>  Tue, 25 Sep 2012 22:28:14 -0400
+
+libhybris (0.7) unstable; urgency=low
+
+  * test_camera added to test package
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Tue, 25 Sep 2012 15:01:32 -0300
+
+libhybris (0.6) unstable; urgency=low
+
+  * Dropping the +git version string as we're now using our own specific
+    versions
+  * Adding lib*.so files to libhybris-dev
+  * Installing the new libcamera library at libhybris
+  * hybris/Makefile:
+    - Adding rules to create the lib*.so links
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@linaro.org>  Tue, 25 Sep 2012 03:31:12 -0300
+
+libhybris (0.5+git) unstable; urgency=low
+
+  * Using update-alternatives for the GLES libraries (LP: #1051994)
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Fri, 21 Sep 2012 01:18:07 -0300
+
+libhybris (0.4+git) unstable; urgency=low
+
+  * Bumping package version
+  * Packaging input library
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Wed, 19 Sep 2012 17:35:39 -0300
+
+libhybris (0.3+git) unstable; urgency=low
+
+  * Fix symbol visibility in InputStack compat layer
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Wed, 19 Sep 2012 12:29:49 -0300
+
+libhybris (0.2+git) unstable; urgency=low
+
+  * Key codes for compatibility layer
+  * Compatibility hooks and functions added
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Tue, 18 Sep 2012 23:03:22 -0300
+
+libhybris (0.1+git) unstable; urgency=low
+
+  * Adding dev package with headers
+  * Package only for armel, armhf and i386
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Fri, 14 Sep 2012 11:50:39 -0300
+
+libhybris (0.0+git) UNRELEASED; urgency=low
+
+  * Initial release
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Fri, 07 Sep 2012 10:58:45 -0300

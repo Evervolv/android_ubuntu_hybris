@@ -1,0 +1,15 @@
+hybris/libis.so.1		#LIBDIR#
+hybris/libis.so.1.0		#LIBDIR#
+hybris/libsf.so.1.0		#LIBDIR#
+hybris/libsf.so.1		#LIBDIR#
+hybris/libhardware.so.1.0	#LIBDIR#
+hybris/libhardware.so.1		#LIBDIR#
+hybris/libcamera.so.1.0		#LIBDIR#
+hybris/libcamera.so.1		#LIBDIR#
+hybris/libmediaplayer.so.1.0	#LIBDIR#
+hybris/libmediaplayer.so.1		#LIBDIR#
+hybris/libhybris_ics.so		#LIBDIR#
+hybris/libEGL.so.1.0		#PKGLIBDIR#
+hybris/libEGL.so.1		#PKGLIBDIR#
+hybris/libGLESv2.so.2		#PKGLIBDIR#
+hybris/libGLESv2.so.2.0		#PKGLIBDIR#
